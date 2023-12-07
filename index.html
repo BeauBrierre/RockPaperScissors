@@ -10,13 +10,63 @@
 
     <script>
 
-        function getRandomInt(max){
-            return Math.floor(Math.random() * max)
+        //get a random number from the computer
+        function getComputerChoice(max){
+            let compChoice = Math.floor(Math.random() * max)
+            //console.log(compChoice)
+
+            let funStr = "temp"
+            if (compChoice == 0){
+                let funStr = "rock"
+                return funStr
+            } else if(compChoice == 1){
+                let funStr = "paper"
+                return funStr
+            } else if(compChoice == 2) {
+                let funStr = "scissors"
+                return funStr
+            }
         }
 
-        let compChoice = getRandomInt(3)
-        //console.log(compChoice)
+        function playRound(computerSelection, playerSelection){
+            let testStrC = computerSelection.toLocaleLowerCase()
+            let testStrP = playerSelection.toLocaleLowerCase()
+            console.log(testStrC)
+            console.log(testStrP)
+            if(testStrC === testStrP){
+                return "its a tie!"
+            }
+            if(testStrC == "rock"){
+                if(testStrP == "scissors"){
+                    return "computer wins!"
+                } else {
+                    return "player wins!"
+                }
+            }
+            if(testStrC == "paper"){
+                if(testStrP == "rock"){
+                    return "computer wins!"
+                } else {
+                    return "player wins!"
+                }
+            }
+            if(testStrC == "scissors"){
+                if(testStrP == "paper"){
+                    return "computer wins!"
+                } else {
+                    return "player wins!"
+                }
+            }
+        }
+        
 
+        //test to see what the computer chose
+        let computerSelection = getComputerChoice(3)
+        //console.log(computerSelection)
+        let playerSelection = "rock"
+
+        console.log(playRound(playerSelection, computerSelection))
+     
     </script>
 </body>
 </html>
