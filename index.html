@@ -65,7 +65,29 @@
         //console.log(computerSelection)
         let playerSelection = "rock"
 
-        console.log(playRound(playerSelection, computerSelection))
+        //console.log(playRound(playerSelection, computerSelection))
+        
+        function game(computerSelection, playerSelection){
+            let tallyC = 0
+            let tallyP = 0
+            
+            for(let i = 0; i < 5; i++){
+            //test to see what the computer chose
+            let computerSelection = getComputerChoice(3)
+            //console.log(computerSelection)
+            let playerSelection = "rock"
+                let answer = console.log(playRound(playerSelection, computerSelection))
+                if(answer == "computer wins!"){
+                    ++tallyC
+                    console.log(tallyC)
+                } else if(answer == "player wins!"){
+                    ++tallyP
+                    console.log(tallyP)
+                }
+            }
+        }
+
+        game(computerSelection, playerSelection)
      
     </script>
 </body>
