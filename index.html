@@ -31,8 +31,8 @@
         function playRound(computerSelection, playerSelection){
             let testStrC = computerSelection.toLocaleLowerCase()
             let testStrP = playerSelection.toLocaleLowerCase()
-            console.log(testStrC)
-            console.log(testStrP)
+            console.log("computer choice: " + testStrC)
+            console.log("player choice: " + testStrP)
 
             const compWin = "computer wins!"
             const playWin = "player wins!"
@@ -75,23 +75,29 @@
             while(tallyC < 3 && tallyP < 3){
                 //test to see what the computer chose
                 let computerSelection = getComputerChoice(3)
-                let playerSelection = "rock"
+                let playerSelection = prompt("Whats your choice?")
                 let answer = "temp"
 
-                answer = playRound(playerSelection, computerSelection)
+                answer = playRound(computerSelection, playerSelection)
                 console.log(answer)
 
                 if(answer == "computer wins!"){
                     tallyC++
-                    console.log(tallyC)
+                    //console.log(tallyC)
                 } else if(answer == "player wins!"){
                     tallyP++
-                    console.log(tallyP)
+                    //console.log(tallyP)
                 }
             }
             console.log("computer score: " + tallyC)
             console.log("player score: " + tallyP)
 
+            //total winner
+            if(tallyC == 3){
+                console.log("computer wins it all!")
+            } else if (tallyP == 3){
+                console.log("player wins it all!")
+            }
         }
 
         game()
